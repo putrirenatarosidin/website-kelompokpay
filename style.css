@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#9edcff, #eaf8ff);
+    color: #234;
+    min-height: 100vh;
+}
+
+nav {
+    background: #5bb9ee;
+    padding: 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    color: #fff7a8;
+}
+
+.hero {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #1479b8;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+.sun {
+    position: absolute;
+    right: 10%;
+    top: 50px;
+    font-size: 90px;
+}
+
+.cloud {
+    position: absolute;
+    font-size: 75px;
+    opacity: 0.9;
+}
+
+.cloud1 {
+    left: 8%;
+    top: 80px;
+}
+
+.cloud2 {
+    right: 20%;
+    bottom: 50px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.title {
+    text-align: center;
+    color: #1479b8;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 100, 160, 0.15);
+}
+
+.card h3 {
+    color: #1479b8;
+    margin-bottom: 15px;
+}
+
+.emoji {
+    font-size: 65px;
+    margin-bottom: 15px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #42aee8;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #1479b8;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 25px;
+    text-align: center;
+    background: #5bb9ee;
+    color: white;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
