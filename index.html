@@ -1,85 +1,251 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Langit Ceria - Website Kelompok</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Langit Ceria</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <nav>
-    <a href="index.html">beranda</a>
+
+    <a href="index.html">🏠 Beranda</a>
+
+    <a href="ripay.html">👨‍💻 Ripay</a>
+
+    <a href="nata.html">👩‍💻 Nata</a>
+
 </nav>
 
+
+<!-- musik -->
+
+<div class="music-player" id="musicPlayer">
+
+    <div class="music-cover">
+        ☁️
+    </div>
+
+    <div class="music-detail">
+
+        <small>NOW PLAYING</small>
+
+        <span>Langit Ceria</span>
+
+    </div>
+
+    <div class="music-bars">
+
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+
+    </div>
+
+    <button
+        class="music-button"
+        id="musicButton"
+        onclick="putarMusik()">
+
+        ▶
+
+    </button>
+
+    <audio id="musik" loop>
+
+        <source src="musik-beranda.mp3"
+                type="audio/mpeg">
+
+    </audio>
+
+</div>
+
+
+<!-- bagian utama -->
+
 <section class="hero">
-    <div class="cloud cloud1">☁️</div>
-    <div class="cloud cloud2">☁️</div>
-    <div class="sun">☀️</div>
+
+    <div class="cloud cloud1">
+        ☁️
+    </div>
+
+    <div class="cloud cloud2">
+        ☁️
+    </div>
+
+    <div class="sun">
+        ☀️
+    </div>
 
     <div>
-        <h1>☁️ Tugas program web ☀️</h1>
-        <p>Website Kolaborasi Pemrograman Web</p>
-        <p>Kelompok 2 Anggota</p>
+
+        <h1>
+            ☁️ Tugas Program Web ☀️
+        </h1>
+
+        <p>
+            Website Kolaborasi Pemrograman Web
+        </p>
+
+        <p>
+            Kelompok 2
+        </p>
+
     </div>
+
 </section>
+
+
+<!-- anggota -->
 
 <section class="container">
 
-    <h2 class="title">👩‍💻 Anggota Kelompok 👨‍💻</h2>
+    <h2 class="title">
+        👩‍💻 Anggota Kelompok 👨‍💻
+    </h2>
 
     <div class="cards">
 
         <div class="card">
-            <div class="emoji">🧗🏼‍♀️</div>
-            <h3>Abdur Rohman Rifa'i</h3>
-            <p>Nim: 3337250038</p>
-            <p>Kelas:B</p>
-            <a class="button" href="abdur.html">
-                Ayo lihat halaman ripay 🤙🏻
+
+            <div class="emoji">
+                🧗🏼‍♀️
+            </div>
+
+            <h3>
+                Abdur Rohman Rifa'i
+            </h3>
+
+            <p>NIM: 3337250038</p>
+
+            <p>Kelas: B</p>
+
+            <a
+                href="ripay.html"
+                class="button">
+
+                Lihat halaman Ripay 🤙🏻
+
             </a>
+
         </div>
 
+
         <div class="card">
-            <div class="emoji">👩🏼‍💻</div>
-            <h3>Putri Renata Rosidin</h3>
-            <p>Nim: 3337250009</p>
+
+            <div class="emoji">
+                👩🏼‍💻
+            </div>
+
+            <h3>
+                Putri Renata Rosidin
+            </h3>
+
+            <p>NIM: 3337250009</p>
+
             <p>Kelas: B</p>
-            <a class="button" href="putri.html">
-                Ayo lihat halaman nata 🤙🏻
+
+            <a
+                href="nata.html"
+                class="button">
+
+                Lihat halaman Nata 🤙🏻
+
             </a>
+
         </div>
 
     </div>
 
 </section>
+
+
+<!-- tentang -->
 
 <section class="container">
 
-    <h2 class="title">🌈 Tentang Website</h2>
+    <h2 class="title">
+        🌈 Tentang Website
+    </h2>
 
     <div class="card">
-        <div class="emoji">☀️☁️</div>
+
+        <div class="emoji">
+            ☀️☁️
+        </div>
 
         <p>
-            Website ini dibuat sebagai tugas kolaborasi
-            Pemrograman Web menggunakan HTML, CSS,
-            Git, dan GitHub.
+            Website ini dibuat sebagai tugas
+            kolaborasi Pemrograman Web menggunakan
+            HTML, CSS, Git, dan GitHub.
         </p>
 
         <p style="margin-top: 15px;">
-            Setiap anggota mengerjakan bagian masing-masing
-            kemudian menggabungkannya menjadi satu website.
+
+            Setiap anggota mengerjakan bagian
+            masing-masing lalu digabungkan menjadi
+            satu website.
+
         </p>
+
     </div>
 
 </section>
 
+
 <footer>
-    <p>© 2026 Kelompok Pemrograman Web</p>
-    <p>☁️ Dibuat dengan HTML, CSS, Git & GitHub ☀️</p>
+
+    <p>
+        © 2026 Kelompok Pemrograman Web
+    </p>
+
+    <p>
+        ☁️ Dibuat dengan HTML, CSS, Git & GitHub ☀️
+    </p>
+
 </footer>
+
+
+<script>
+
+const musik = document.getElementById("musik");
+const tombol = document.getElementById("musicButton");
+const player = document.getElementById("musicPlayer");
+
+function putarMusik() {
+
+    if (musik.paused) {
+
+        musik.play();
+
+        tombol.innerHTML = "Ⅱ";
+
+        player.classList.add("playing");
+
+    } else {
+
+        musik.pause();
+
+        tombol.innerHTML = "▶";
+
+        player.classList.remove("playing");
+
+    }
+
+}
+
+</script>
 
 </body>
 </html>
