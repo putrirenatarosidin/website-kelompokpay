@@ -4,33 +4,47 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(#9edcff, #eaf8ff);
-    color: #234;
-    min-height: 100vh;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#9edcff, #eefaff);
+    color: #234;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* navbar */
 nav {
     background: #5bb9ee;
-    padding: 18px;
+    padding: 15px;
     text-align: center;
     position: sticky;
     top: 0;
     z-index: 10;
+    box-shadow: 0 3px 12px rgba(0, 90, 140, 0.2);
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    margin: 0 15px;
+    margin: 0 10px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: 0.3s;
 }
 
 nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
     color: #fff7a8;
+    transform: translateY(-2px);
 }
 
+/* bagian awal */
 .hero {
     min-height: 420px;
     display: flex;
@@ -43,38 +57,47 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 46px;
     color: #1479b8;
     margin-bottom: 15px;
+    animation: muncul 1s ease;
 }
 
 .hero p {
-    font-size: 20px;
+    font-size: 19px;
+    margin: 6px;
+    animation: naik 1.5s ease;
 }
 
+/* matahari */
 .sun {
     position: absolute;
     right: 10%;
     top: 50px;
-    font-size: 90px;
+    font-size: 85px;
+    animation: matahari 4s ease-in-out infinite;
 }
 
+/* awan */
 .cloud {
     position: absolute;
-    font-size: 75px;
+    font-size: 70px;
     opacity: 0.9;
 }
 
 .cloud1 {
     left: 8%;
     top: 80px;
+    animation: awan1 9s ease-in-out infinite;
 }
 
 .cloud2 {
-    right: 20%;
-    bottom: 50px;
+    right: 18%;
+    bottom: 45px;
+    animation: awan2 11s ease-in-out infinite;
 }
 
+/* isi */
 .container {
     max-width: 1000px;
     margin: auto;
@@ -87,6 +110,17 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
+.title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #42aee8;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+/* card */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -99,33 +133,57 @@ nav a:hover {
     padding: 30px;
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 100, 160, 0.15);
+    transition: 0.4s;
+    animation: kartu 4s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 100, 160, 0.25);
 }
 
 .card h3 {
     color: #1479b8;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.6;
 }
 
 .emoji {
-    font-size: 65px;
+    font-size: 60px;
     margin-bottom: 15px;
+    display: inline-block;
+    animation: emoji 3s ease-in-out infinite;
 }
 
+/* tombol */
 .button {
     display: inline-block;
     margin-top: 20px;
-    padding: 12px 25px;
+    padding: 12px 24px;
     background: #42aee8;
     color: white;
     border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .button:hover {
     background: #1479b8;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(20, 121, 184, 0.3);
 }
 
+/* footer */
 footer {
     margin-top: 50px;
     padding: 25px;
@@ -134,6 +192,349 @@ footer {
     color: white;
 }
 
-section {
-    scroll-margin-top: 80px;
+footer p {
+    margin: 5px;
+}
+
+/* music */
+.music-player {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 280px;
+    min-height: 70px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 100, 160, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 20;
+    animation: munculMusic 0.8s ease;
+}
+
+.music-cover {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    background: linear-gradient(135deg, #bcecff, #5bb9ee);
+}
+
+.music-player.playing .music-cover {
+    animation: putar 4s linear infinite;
+}
+
+.music-detail {
+    width: 90px;
+    overflow: hidden;
+}
+
+.music-detail small {
+    display: block;
+    color: #7b9aaa;
+    font-size: 8px;
+    margin-bottom: 4px;
+}
+
+.music-detail span {
+    color: #1479b8;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.music-bars {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 30px;
+    margin-left: auto;
+}
+
+.music-bars i {
+    width: 3px;
+    height: 7px;
+    background: #42aee8;
+    border-radius: 5px;
+}
+
+.music-player.playing .music-bars i {
+    animation: equalizer 0.8s infinite;
+}
+
+.music-player.playing .music-bars i:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.music-player.playing .music-bars i:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+.music-player.playing .music-bars i:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.music-player.playing .music-bars i:nth-child(5) {
+    animation-delay: 0.15s;
+}
+
+.music-button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #42aee8;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.music-button:hover {
+    background: #1479b8;
+    transform: scale(1.1);
+}
+
+/* tambahan grid dari tugas */
+.grid-container {
+    margin: 3rem auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    place-items: center;
+    gap: 20px 30px;
+    background-color: darkslateblue;
+    border-radius: 10px;
+}
+
+.elements {
+    padding: 1rem 2rem;
+    text-align: center;
+    background-color: rgb(169, 158, 238);
+    border-radius: 6px;
+    color: rgb(25, 118, 212);
+}
+
+/* flexbox */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* animasi */
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes naik {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes matahari {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(10deg);
+    }
+}
+
+@keyframes awan1 {
+    0%, 100% {
+        transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(60px);
+    }
+}
+
+@keyframes awan2 {
+    0%, 100% {
+        transform: translateX(20px);
+    }
+
+    50% {
+        transform: translateX(-60px);
+    }
+}
+
+@keyframes kartu {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes emoji {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(4deg);
+    }
+}
+
+@keyframes munculMusic {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes putar {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes equalizer {
+    0% {
+        height: 5px;
+    }
+
+    50% {
+        height: 23px;
+    }
+
+    100% {
+        height: 7px;
+    }
+}
+
+/* hp */
+@media screen and (max-width: 480px) {
+
+    nav a {
+        margin: 2px;
+        padding: 7px;
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .sun {
+        font-size: 50px;
+        right: 3%;
+        top: 35px;
+    }
+
+    .cloud {
+        font-size: 45px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .music-player {
+        right: 10px;
+        bottom: 10px;
+        width: 235px;
+        min-height: 60px;
+    }
+
+    .music-cover {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+    }
+
+    .music-detail {
+        width: 70px;
+    }
+
+    .music-detail span {
+        font-size: 11px;
+    }
+
+    .music-button {
+        width: 37px;
+        height: 37px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* tablet */
+@media screen and (min-width: 481px)
+and (max-width: 768px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* laptop */
+@media screen and (min-width: 769px)
+and (max-width: 1024px) {
+
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
