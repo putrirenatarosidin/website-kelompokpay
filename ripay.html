@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ripay - Langit Ceria</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+    <a href="index.html">🏠 Beranda</a>
+
+    <a href="ripay.html">👨‍💻 Ripay</a>
+
+    <a href="nata.html">👩‍💻 Nata</a>
+
+</nav>
+
+
+<!-- musik -->
+
+<div class="music-player" id="musicPlayer">
+
+    <div class="music-cover">
+        🎸
+    </div>
+
+    <div class="music-detail">
+
+        <small>NOW PLAYING</small>
+
+        <span>Musik Ripay</span>
+
+    </div>
+
+    <div class="music-bars">
+
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+
+    </div>
+
+    <button
+        class="music-button"
+        id="musicButton"
+        onclick="putarMusik()">
+
+        ▶
+
+    </button>
+
+    <audio id="musik" loop>
+
+        <source src="musik-ripay.mp3"
+                type="audio/mpeg">
+
+    </audio>
+
+</div>
+
+
+<section class="hero">
+
+    <div class="cloud cloud1">
+        ☁️
+    </div>
+
+    <div class="cloud cloud2">
+        ☁️
+    </div>
+
+    <div class="sun">
+        ☀️
+    </div>
+
+    <div>
+
+        <h1>
+            🔩 Halaman Gue 🤙🏻
+        </h1>
+
+        <p>
+            Bagian Individu 🦅
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="container">
+
+    <h2 class="title">
+        ⚙️ Profil Anggota 1
+    </h2>
+
+    <div class="card">
+
+        <div class="emoji">
+            🔩🔧
+        </div>
+
+        <h3>
+            Abdur Rohman Rifa'i
+        </h3>
+
+        <p>
+            <strong>NIM:</strong>
+            3337250038
+        </p>
+
+        <p>
+            <strong>Fakultas:</strong>
+            Teknik
+        </p>
+
+        <p>
+            <strong>Jurusan:</strong>
+            Informatika
+        </p>
+
+        <p>
+            <strong>Peran:</strong>
+            Anggota 1
+        </p>
+
+        <p style="margin-top: 20px;">
+
+            Mengerjakan bagian halaman individu
+            dan ikut membantu pengembangan
+            website kelompok.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="container">
+
+    <h2 class="title">
+        💻 Bagian yang Dikerjakan
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="emoji">
+                🌐
+            </div>
+
+            <h3>HTML</h3>
+
+            <p>
+
+                Membuat struktur halaman website
+                menggunakan HTML.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="emoji">
+                🎨
+            </div>
+
+            <h3>CSS</h3>
+
+            <p>
+
+                Mengatur tampilan website supaya
+                lebih menarik dan responsif.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        ☁️ Halaman Abdur Rohman Rifa'i ☀️
+    </p>
+
+</footer>
+
+
+<script>
+
+const musik = document.getElementById("musik");
+const tombol = document.getElementById("musicButton");
+const player = document.getElementById("musicPlayer");
+
+function putarMusik() {
+
+    if (musik.paused) {
+
+        musik.play();
+
+        tombol.innerHTML = "Ⅱ";
+
+        player.classList.add("playing");
+
+    } else {
+
+        musik.pause();
+
+        tombol.innerHTML = "▶";
+
+        player.classList.remove("playing");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
