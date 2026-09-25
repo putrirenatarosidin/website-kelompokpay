@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Nata - Langit Ceria</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+    <a href="index.html">🏠 Beranda</a>
+
+    <a href="ripay.html">👨‍💻 Ripay</a>
+
+    <a href="nata.html">👩‍💻 Nata</a>
+
+</nav>
+
+
+<!-- musik -->
+
+<div class="music-player" id="musicPlayer">
+
+    <div class="music-cover">
+        🎀
+    </div>
+
+    <div class="music-detail">
+
+        <small>NOW PLAYING</small>
+
+        <span>Musik Nata</span>
+
+    </div>
+
+    <div class="music-bars">
+
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+
+    </div>
+
+    <button
+        class="music-button"
+        id="musicButton"
+        onclick="putarMusik()">
+
+        ▶
+
+    </button>
+
+    <audio id="musik" loop>
+
+        <source src="musik-nata.mp3"
+                type="audio/mpeg">
+
+    </audio>
+
+</div>
+
+
+<section class="hero">
+
+    <div class="cloud cloud1">
+        ☁️
+    </div>
+
+    <div class="cloud cloud2">
+        ☁️
+    </div>
+
+    <div class="sun">
+        ☀️
+    </div>
+
+    <div>
+
+        <h1>
+            👩‍💻 Halaman Nata
+        </h1>
+
+        <p>
+            Bagian Individu
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="container">
+
+    <h2 class="title">
+        🌈 Profil Anggota
+    </h2>
+
+    <div class="card">
+
+        <div class="emoji">
+            👩‍💻
+        </div>
+
+        <h3>
+            Putri Renata Rosidin
+        </h3>
+
+        <p>
+            <strong>Peran:</strong>
+            Anggota 2
+        </p>
+
+        <p>
+            <strong>NIM:</strong>
+            3337250009
+        </p>
+
+        <p>
+            <strong>Fakultas:</strong>
+            Teknik
+        </p>
+
+        <p>
+            <strong>Jurusan:</strong>
+            Informatika
+        </p>
+
+        <p style="margin-top: 20px;">
+
+            Saya mengerjakan bagian halaman
+            individu dan ikut membantu proses
+            penggabungan website menggunakan
+            Git dan GitHub.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="container">
+
+    <h2 class="title">
+        ✨ Kontribusi
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="emoji">
+                📝
+            </div>
+
+            <h3>
+                Konten Website
+            </h3>
+
+            <p>
+
+                Membuat dan menyusun konten
+                untuk halaman individu.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="emoji">
+                🔗
+            </div>
+
+            <h3>
+                Kolaborasi Git
+            </h3>
+
+            <p>
+
+                Menggunakan branch, commit,
+                dan push dalam proses pengerjaan
+                website bersama.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        ☁️ Halaman Putri Renata Rosidin ☀️
+    </p>
+
+</footer>
+
+
+<script>
+
+const musik = document.getElementById("musik");
+const tombol = document.getElementById("musicButton");
+const player = document.getElementById("musicPlayer");
+
+function putarMusik() {
+
+    if (musik.paused) {
+
+        musik.play();
+
+        tombol.innerHTML = "Ⅱ";
+
+        player.classList.add("playing");
+
+    } else {
+
+        musik.pause();
+
+        tombol.innerHTML = "▶";
+
+        player.classList.remove("playing");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
