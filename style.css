@@ -16,7 +16,6 @@ body {
     overflow-x: hidden;
 }
 
-/* navbar */
 nav {
     background: #5bb9ee;
     padding: 15px;
@@ -44,7 +43,6 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* bagian awal */
 .hero {
     min-height: 420px;
     display: flex;
@@ -69,7 +67,6 @@ nav a:hover {
     animation: naik 1.5s ease;
 }
 
-/* matahari */
 .sun {
     position: absolute;
     right: 10%;
@@ -78,7 +75,6 @@ nav a:hover {
     animation: matahari 4s ease-in-out infinite;
 }
 
-/* awan */
 .cloud {
     position: absolute;
     font-size: 70px;
@@ -97,7 +93,6 @@ nav a:hover {
     animation: awan2 11s ease-in-out infinite;
 }
 
-/* isi */
 .container {
     max-width: 1000px;
     margin: auto;
@@ -120,7 +115,6 @@ nav a:hover {
     margin: 10px auto;
 }
 
-/* card */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -164,7 +158,6 @@ nav a:hover {
     animation: emoji 3s ease-in-out infinite;
 }
 
-/* tombol */
 .button {
     display: inline-block;
     margin-top: 20px;
@@ -183,7 +176,6 @@ nav a:hover {
     box-shadow: 0 6px 15px rgba(20, 121, 184, 0.3);
 }
 
-/* footer */
 footer {
     margin-top: 50px;
     padding: 25px;
@@ -196,7 +188,6 @@ footer p {
     margin: 5px;
 }
 
-/* music */
 .music-player {
     position: fixed;
     right: 20px;
@@ -302,7 +293,6 @@ footer p {
     transform: scale(1.1);
 }
 
-/* tambahan grid dari tugas */
 .grid-container {
     margin: 3rem auto;
     padding: 2rem;
@@ -322,7 +312,6 @@ footer p {
     color: rgb(25, 118, 212);
 }
 
-/* flexbox */
 .flex-container {
     display: flex;
     justify-content: center;
@@ -340,7 +329,6 @@ footer p {
     text-align: center;
 }
 
-/* animasi */
 @keyframes muncul {
     from {
         opacity: 0;
@@ -451,7 +439,6 @@ footer p {
     }
 }
 
-/* hp */
 @media screen and (max-width: 480px) {
 
     nav a {
@@ -517,7 +504,6 @@ footer p {
     }
 }
 
-/* tablet */
 @media screen and (min-width: 481px)
 and (max-width: 768px) {
 
@@ -530,7 +516,6 @@ and (max-width: 768px) {
     }
 }
 
-/* laptop */
 @media screen and (min-width: 769px)
 and (max-width: 1024px) {
 
